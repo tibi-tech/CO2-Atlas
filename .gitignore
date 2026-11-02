@@ -1,0 +1,22 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+backend/data/
+
+# Node
+node_modules/
+frontend/dist/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

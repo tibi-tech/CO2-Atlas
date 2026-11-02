@@ -1,0 +1,188 @@
+{
+  "app": {
+    "name": "Calculadora de Absorção de CO₂",
+    "short": "Atlas CO₂",
+    "tagline": "Quanto carbono respira a sua paisagem?"
+  },
+  "nav": { "regions": "Regiões", "newRegion": "Nova região", "about": "Método", "settings": "Definições" },
+  "settings": {
+    "title": "Definições",
+    "lead": "Configuração do servidor desta instalação.",
+    "copernicus": "Copernicus Data Space",
+    "copernicusLead": "As imagens de satélite são processadas no serviço Copernicus openEO com a sua conta gratuita. Cole abaixo um cliente OAuth — é verificado e depois guardado apenas neste servidor.",
+    "configured": "Ligado",
+    "notConfigured": "Não configurado",
+    "client": "Cliente",
+    "sourceEnv": "Gerido pelo ficheiro .env do servidor — edite-o lá.",
+    "sourceSettings": "Guardado a partir desta página.",
+    "creditsUsed": "Créditos openEO usados este mês",
+    "creditsJobs_one": "{{count}} pedido",
+    "creditsJobs_other": "{{count}} pedidos",
+    "creditsBalance": "Saldo restante",
+    "clientId": "Client ID",
+    "clientSecret": "Client secret",
+    "save": "Verificar e guardar",
+    "verifying": "A verificar com o Copernicus…",
+    "replace": "Substituir",
+    "remove": "Remover",
+    "test": "Testar ligação",
+    "testOk": "A ligação funciona.",
+    "saved": "Credenciais verificadas e guardadas.",
+    "removed": "Credenciais removidas.",
+    "confirmRemove": "Remover as credenciais Copernicus guardadas? Os novos cálculos vão falhar até as voltar a adicionar.",
+    "howTo": "Como obtê-las",
+    "steps": [
+      "Inicie sessão no dashboard do Copernicus com a sua conta.",
+      "Abra o menu da conta (canto superior direito) → User settings.",
+      "Em OAuth clients, clique em + Create, dê-lhe um nome e escolha “Never” como validade.",
+      "Copie o Client ID e o Client secret — o secret só é mostrado uma vez."
+    ],
+    "openDashboard": "Abrir o dashboard do Copernicus",
+    "security": "O secret nunca volta a ser mostrado, enviado ao navegador ou escrito nos logs. Fica guardado na pasta de dados do servidor, legível apenas pelo utilizador da aplicação.",
+    "localOnly": "Por segurança, as definições só podem ser alteradas no computador onde a aplicação corre, ou com uma palavra-passe de demo configurada (DEMO_PASSWORD).",
+    "noAccount": "Sem conta? Registe-se gratuitamente em dataspace.copernicus.eu.",
+    "goSettings": "Abrir definições"
+  },
+  "common": {
+    "save": "Guardar", "cancel": "Cancelar", "delete": "Eliminar", "retry": "Repetir", "back": "Voltar",
+    "loading": "A carregar…", "error": "Ocorreu um erro", "confirmDelete": "Eliminar definitivamente?",
+    "km2": "km²", "ha": "ha", "tCO2": "t CO₂", "tC": "t C", "perMonth": "/ mês", "open": "Abrir",
+    "none": "—", "optional": "opcional", "notFound": "Página não encontrada"
+  },
+  "auth": {
+    "title": "Palavra-passe da demo",
+    "body": "Esta demo é só de leitura para visitantes. Introduza a palavra-passe para criar regiões e iniciar cálculos.",
+    "placeholder": "Palavra-passe", "submit": "Desbloquear", "wrong": "Palavra-passe errada", "locked": "Bloqueado",
+    "unlocked": "Desbloqueado", "lock": "Bloquear"
+  },
+  "home": {
+    "hero1": "A vegetação é um",
+    "hero2": "reservatório natural de carbono.",
+    "hero3": "Meça-o a partir do espaço.",
+    "lead": "Desenhe qualquer região no mapa, escolha um mês e deixe as imagens Sentinel-2, o uso do solo ESA WorldCover e os dados climáticos NASA POWER estimarem quanto CO₂ as plantas absorveram — e como isso se compara com as emissões locais.",
+    "start": "Desenhar uma região",
+    "yourRegions": "As suas regiões",
+    "emptyTitle": "Ainda não há regiões",
+    "emptyBody": "Crie a primeira região para começar a medir.",
+    "runs": "{{count}} cálculos",
+    "reference": "Referência da tese",
+    "recent": "Cálculos recentes",
+    "noRuns": "Ainda não há cálculos.",
+    "steps": [
+      ["Desenhar", "Delimite um concelho, parque ou quinta — até {{max}} km²."],
+      ["Escolher meses", "Escolha um mês ou um ano inteiro; cada mês é processado em segundo plano."],
+      ["Ler o atlas", "Explore mapas de NDVI, produtividade e CO₂, compare meses e exporte relatórios."]
+    ]
+  },
+  "newRegion": {
+    "title": "Nova região",
+    "lead": "Desenhe um polígono ou retângulo no mapa, ou carregue um GeoJSON / shapefile em .zip.",
+    "polygon": "Polígono", "rectangle": "Retângulo", "clear": "Limpar", "upload": "Carregar ficheiro",
+    "uploadHint": ".geojson, .json ou .zip (shapefile)",
+    "name": "Nome da região", "population": "População", "perCapita": "Emissões por pessoa",
+    "perCapitaUnit": "t CO₂ / pessoa / mês",
+    "perCapitaHint": "Portugal ≈ 0,40, UE ≈ 0,55, Oeiras (tese) = 0,89",
+    "area": "Área", "create": "Criar região", "drawFirst": "Desenhe ou carregue uma região primeiro",
+    "search": "Procurar um local…"
+  },
+  "region": {
+    "newRun": "Novo cálculo",
+    "year": "Ano", "months": "Meses", "allYear": "Ano inteiro", "clearMonths": "Limpar",
+    "method": "Método", "improved": "Melhorado (qualquer região)", "legacy": "Método da tese (dados incluídos)",
+    "emissions": "Emissões",
+    "emissionsMode": { "perCapita": "População × por pessoa", "total": "Total" },
+    "emissionsTotal": "Emissões totais (t CO₂ / mês)",
+    "advanced": "Definições avançadas do modelo",
+    "fparFixed": "Intervalo NDVI de referência fixo (comparável entre meses)",
+    "ndviMin": "NDVI mín.", "ndviMax": "NDVI máx.",
+    "tOpt": "Temperatura ótima T_opt (°C)", "tOptHint": "Vazio = mês mais quente do ano",
+    "emax": "Eficiência máxima de uso da luz por uso do solo (g C / MJ)",
+    "submit_one": "Calcular {{count}} mês",
+    "submit_other": "Calcular {{count}} meses",
+    "history": "Cálculos",
+    "timeline": "Absorção mensal",
+    "noTimeline": "Conclua pelo menos um cálculo para ver o gráfico mensal.",
+    "settings": "Definições da região",
+    "deleteRegion": "Eliminar região",
+    "queued": "Adicionado à fila",
+    "copernicusMissing": "As credenciais Copernicus não estão configuradas — os novos cálculos vão falhar até as adicionar nas Definições.",
+    "absorbed": "Absorvido", "emitted": "Emissões", "offset": "Compensação"
+  },
+  "status": { "queued": "Em fila", "running": "A correr", "done": "Concluído", "failed": "Falhou", "pending": "Pendente" },
+  "openeo": {
+    "created": "A enviar o pedido ao Copernicus…",
+    "queued": "Em fila no Copernicus · {{time}} (o serviço partilhado está ocupado; pode demorar)",
+    "running": "Em processamento no Copernicus · {{time}}",
+    "finished": "A transferir o resultado…",
+    "other": "Copernicus: {{status}} · {{time}}"
+  },
+  "steps": {
+    "climate": "Clima (NASA POWER)",
+    "sentinel2": "Imagens Sentinel-2",
+    "landcover": "Uso do solo (WorldCover)",
+    "parameters": "Parâmetros do modelo",
+    "npp": "Produtividade primária líquida",
+    "analysis": "Totais e balanço",
+    "render": "Mapas"
+  },
+  "run": {
+    "title": "{{region}} · {{period}}",
+    "progress": "Em processamento",
+    "progressLead": "As imagens Sentinel-2 são processadas no serviço partilhado Copernicus: normalmente 2–5 minutos, mais quando está ocupado. Pode sair desta página — o cálculo continua em segundo plano.",
+    "failed": "O cálculo falhou",
+    "absorbed": "CO₂ absorvido pela vegetação",
+    "absorbedC": "{{value}} t de carbono",
+    "emissions": "Emissões estimadas",
+    "offset": "das emissões compensadas",
+    "offsetNone": "Sem emissões definidas",
+    "meanNpp": "Produtividade média",
+    "perHa": "kg CO₂ / ha / mês",
+    "vegetated": "{{veg}} de {{area}} ha com vegetação",
+    "map": "Atlas",
+    "opacity": "Opacidade",
+    "satellite": "Satélite",
+    "clickHint": "Clique no mapa para ler os valores do píxel",
+    "landcover": "Absorção por uso do solo",
+    "parameters": "Parâmetros do modelo",
+    "notes": "Notas",
+    "export": "Exportar",
+    "pdf": "Relatório PDF", "csv": "Tabela CSV", "zip": "Camadas GeoTIFF",
+    "method_improved": "Modelo CASA melhorado",
+    "method_legacy": "Método da tese",
+    "share": "da absorção"
+  },
+  "layers": {
+    "co2": "CO₂ absorvido", "npp": "NPP (carbono)", "ndvi": "NDVI", "fpar": "FPAR", "wsc": "Stress hídrico",
+    "emax": "Eficiência de uso da luz", "landcover": "Uso do solo", "t_mean": "Temperatura", "sol": "Radiação solar"
+  },
+  "params": {
+    "t_mean": "Temperatura média do ar", "t_opt": "Temperatura ótima", "t1": "Fator de temperatura T1",
+    "t2": "Fator de temperatura T2", "sol": "Radiação solar", "sol_daily": "Radiação solar diária",
+    "s2_coverage": "Píxeis Sentinel-2 limpos"
+  },
+  "notes": {
+    "climate_fallback": "Os dados climáticos deste mês ainda não foram publicados; foi usada a média de 5 anos.",
+    "extended_window": "Poucas imagens sem nuvens neste mês — foi usada uma janela de 3 meses centrada nele.",
+    "thesis_method": "Método e dados originais da tese (Oeiras, junho de 2024)."
+  },
+  "classes": {
+    "tree_cover": "Árvores", "shrubland": "Matos", "grassland": "Prados", "cropland": "Agrícola",
+    "built_up": "Edificado", "bare_sparse": "Solo nu / esparso", "snow_ice": "Neve e gelo", "water": "Água",
+    "wetland": "Zonas húmidas", "mangroves": "Mangais", "moss_lichen": "Musgos e líquenes"
+  },
+  "about": {
+    "title": "O método",
+    "lead": "A produtividade primária líquida (NPP) — o carbono que as plantas fixam por fotossíntese menos o que respiram — é estimada com o modelo de eficiência de uso da luz CASA e depois convertida em CO₂.",
+    "formula": "NPP = 0,5 · SOL · FPAR · T1 · T2 · WSC · Eₘₐₓ",
+    "co2": "CO₂ = NPP × 44/12",
+    "terms": [
+      ["SOL", "Radiação solar mensal incidente (MJ/m²) da NASA POWER; metade é fotossinteticamente ativa."],
+      ["FPAR", "Fração dessa luz absorvida pela copa, escalada linearmente a partir do NDVI Sentinel-2 (B04, B08) entre as referências CASA 0,023 e 0,70 (Zhu et al., 2006)."],
+      ["T1, T2", "Fatores de stress térmico a partir da temperatura mensal do ar e da temperatura ótima (mês mais quente)."],
+      ["WSC", "Stress hídrico pelo Shortwave Infrared Moisture Index (Sentinel-2 B11, B12), normalizado dentro da região (Fensholt & Sandholt, 2003), entre 0,5 e 1."],
+      ["Eₘₐₓ", "Eficiência máxima de uso da luz para cada classe de uso do solo ESA WorldCover 2021."]
+    ],
+    "origin": "Esta aplicação web reconstrói o projeto final de curso (PFC) desenvolvido no ISEL para o concelho de Oeiras. Os relatórios, pósteres e o cálculo de referência original (junho de 2024) são mantidos para comparação.",
+    "limits": "Os resultados são estimativas mensais. Os dados climáticos são grosseiros (~50 km), por isso o detalhe vem dos índices de vegetação e do uso do solo; áreas edificadas e água não absorvem neste modelo."
+  }
+}

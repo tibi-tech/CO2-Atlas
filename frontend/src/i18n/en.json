@@ -1,0 +1,188 @@
+{
+  "app": {
+    "name": "CO₂ Absorption Calculator",
+    "short": "CO₂ Atlas",
+    "tagline": "How much carbon does your landscape breathe in?"
+  },
+  "nav": { "regions": "Regions", "newRegion": "New region", "about": "Method", "settings": "Settings" },
+  "settings": {
+    "title": "Settings",
+    "lead": "Server configuration for this installation.",
+    "copernicus": "Copernicus Data Space",
+    "copernicusLead": "Satellite imagery is processed on the Copernicus openEO service with your free account. Paste an OAuth client below — it is verified, then stored only on this server.",
+    "configured": "Connected",
+    "notConfigured": "Not configured",
+    "client": "Client",
+    "sourceEnv": "Managed by the server .env file — edit it there.",
+    "sourceSettings": "Saved from this page.",
+    "creditsUsed": "openEO credits used this month",
+    "creditsJobs_one": "{{count}} job",
+    "creditsJobs_other": "{{count}} jobs",
+    "creditsBalance": "Remaining balance",
+    "clientId": "Client ID",
+    "clientSecret": "Client secret",
+    "save": "Verify & save",
+    "verifying": "Verifying with Copernicus…",
+    "replace": "Replace",
+    "remove": "Remove",
+    "test": "Test connection",
+    "testOk": "Connection works.",
+    "saved": "Credentials verified and saved.",
+    "removed": "Credentials removed.",
+    "confirmRemove": "Remove the stored Copernicus credentials? New calculations will fail until you add them again.",
+    "howTo": "How to get them",
+    "steps": [
+      "Log in to the Copernicus dashboard with your account.",
+      "Open your account menu (top right) → User settings.",
+      "Under OAuth clients, click + Create, give it a name and choose “Never” as expiry.",
+      "Copy the Client ID and the Client secret — the secret is shown only once."
+    ],
+    "openDashboard": "Open the Copernicus dashboard",
+    "security": "The secret is never shown again, sent back to the browser or written to logs. It is stored in the server's data folder, readable only by the app's user.",
+    "localOnly": "For safety, settings can only be changed from the computer running the app, or with a demo password configured (DEMO_PASSWORD).",
+    "noAccount": "No account? Register for free at dataspace.copernicus.eu.",
+    "goSettings": "Open settings"
+  },
+  "common": {
+    "save": "Save", "cancel": "Cancel", "delete": "Delete", "retry": "Retry", "back": "Back",
+    "loading": "Loading…", "error": "Something went wrong", "confirmDelete": "Delete permanently?",
+    "km2": "km²", "ha": "ha", "tCO2": "t CO₂", "tC": "t C", "perMonth": "/ month", "open": "Open",
+    "none": "—", "optional": "optional", "notFound": "Page not found"
+  },
+  "auth": {
+    "title": "Demo password",
+    "body": "This demo is read-only for visitors. Enter the password to create regions and start calculations.",
+    "placeholder": "Password", "submit": "Unlock", "wrong": "Wrong password", "locked": "Locked", "unlocked": "Unlocked",
+    "lock": "Lock"
+  },
+  "home": {
+    "hero1": "Vegetation is a",
+    "hero2": "carbon sink.",
+    "hero3": "Measure it from space.",
+    "lead": "Draw any region on the map, pick a month and let Sentinel-2 imagery, ESA WorldCover land cover and NASA POWER climate data estimate how much CO₂ its plants absorbed — and how that compares with local emissions.",
+    "start": "Draw a region",
+    "yourRegions": "Your regions",
+    "emptyTitle": "No regions yet",
+    "emptyBody": "Create your first region to start measuring.",
+    "runs": "{{count}} calculations",
+    "reference": "Thesis reference",
+    "recent": "Recent calculations",
+    "noRuns": "No calculations yet.",
+    "steps": [
+      ["Draw", "Outline a municipality, park or farm — up to {{max}} km²."],
+      ["Choose months", "Pick one month or a whole year; each month is processed in the background."],
+      ["Read the atlas", "Explore NDVI, productivity and CO₂ maps, compare months and export reports."]
+    ]
+  },
+  "newRegion": {
+    "title": "New region",
+    "lead": "Draw a polygon or rectangle on the map, or upload a GeoJSON / zipped shapefile.",
+    "polygon": "Polygon", "rectangle": "Rectangle", "clear": "Clear", "upload": "Upload file",
+    "uploadHint": ".geojson, .json or .zip (shapefile)",
+    "name": "Region name", "population": "Population", "perCapita": "Emissions per person",
+    "perCapitaUnit": "t CO₂ / person / month",
+    "perCapitaHint": "Portugal ≈ 0.40, EU ≈ 0.55, Oeiras (thesis) = 0.89",
+    "area": "Area", "create": "Create region", "drawFirst": "Draw or upload a region first",
+    "search": "Search a place…"
+  },
+  "region": {
+    "newRun": "New calculation",
+    "year": "Year", "months": "Months", "allYear": "Whole year", "clearMonths": "Clear",
+    "method": "Method", "improved": "Improved (any region)", "legacy": "Thesis method (bundled data)",
+    "emissions": "Emissions",
+    "emissionsMode": { "perCapita": "Population × per person", "total": "Total" },
+    "emissionsTotal": "Total emissions (t CO₂ / month)",
+    "advanced": "Advanced model settings",
+    "fparFixed": "Fixed NDVI reference range (comparable between months)",
+    "ndviMin": "NDVI min", "ndviMax": "NDVI max",
+    "tOpt": "Optimal temperature T_opt (°C)", "tOptHint": "Empty = warmest month of the year",
+    "emax": "Max. light-use efficiency by land cover (g C / MJ)",
+    "submit_one": "Calculate {{count}} month",
+    "submit_other": "Calculate {{count}} months",
+    "history": "Calculations",
+    "timeline": "Monthly absorption",
+    "noTimeline": "Complete at least one calculation to see the monthly chart.",
+    "settings": "Region settings",
+    "deleteRegion": "Delete region",
+    "queued": "Added to the queue",
+    "copernicusMissing": "Copernicus credentials are not configured — new calculations will fail until you add them in Settings.",
+    "absorbed": "Absorbed", "emitted": "Emissions", "offset": "Offset"
+  },
+  "status": { "queued": "Queued", "running": "Running", "done": "Done", "failed": "Failed", "pending": "Pending" },
+  "openeo": {
+    "created": "Submitting the job to Copernicus…",
+    "queued": "Waiting in the Copernicus queue · {{time}} (the shared service is busy; this can take a while)",
+    "running": "Processing on Copernicus · {{time}}",
+    "finished": "Downloading the result…",
+    "other": "Copernicus: {{status}} · {{time}}"
+  },
+  "steps": {
+    "climate": "Climate (NASA POWER)",
+    "sentinel2": "Sentinel-2 imagery",
+    "landcover": "Land cover (WorldCover)",
+    "parameters": "Model parameters",
+    "npp": "Net primary productivity",
+    "analysis": "Totals & balance",
+    "render": "Maps"
+  },
+  "run": {
+    "title": "{{region}} · {{period}}",
+    "progress": "Processing",
+    "progressLead": "Sentinel-2 imagery is processed on the shared Copernicus service: usually 2–5 minutes, longer when it is busy. You can leave this page — the job continues in the background.",
+    "failed": "The calculation failed",
+    "absorbed": "CO₂ absorbed by vegetation",
+    "absorbedC": "{{value}} t of carbon",
+    "emissions": "Estimated emissions",
+    "offset": "of emissions offset",
+    "offsetNone": "No emissions set",
+    "meanNpp": "Mean productivity",
+    "perHa": "kg CO₂ / ha / month",
+    "vegetated": "{{veg}} of {{area}} ha vegetated",
+    "map": "Atlas",
+    "opacity": "Opacity",
+    "satellite": "Satellite",
+    "clickHint": "Click the map to read pixel values",
+    "landcover": "Absorption by land cover",
+    "parameters": "Model parameters",
+    "notes": "Notes",
+    "export": "Export",
+    "pdf": "PDF report", "csv": "CSV table", "zip": "GeoTIFF layers",
+    "method_improved": "Improved CASA model",
+    "method_legacy": "Thesis method",
+    "share": "of absorption"
+  },
+  "layers": {
+    "co2": "CO₂ absorbed", "npp": "NPP (carbon)", "ndvi": "NDVI", "fpar": "FPAR", "wsc": "Water stress",
+    "emax": "Light-use efficiency", "landcover": "Land cover", "t_mean": "Temperature", "sol": "Solar radiation"
+  },
+  "params": {
+    "t_mean": "Mean air temperature", "t_opt": "Optimal temperature", "t1": "T1 temperature factor",
+    "t2": "T2 temperature factor", "sol": "Solar radiation", "sol_daily": "Daily solar radiation",
+    "s2_coverage": "Clear Sentinel-2 pixels"
+  },
+  "notes": {
+    "climate_fallback": "Climate data for this month is not published yet; the 5-year average was used.",
+    "extended_window": "Few cloud-free images this month — a 3-month window centred on it was used.",
+    "thesis_method": "Original thesis method and bundled inputs (Oeiras, June 2024)."
+  },
+  "classes": {
+    "tree_cover": "Tree cover", "shrubland": "Shrubland", "grassland": "Grassland", "cropland": "Cropland",
+    "built_up": "Built-up", "bare_sparse": "Bare / sparse", "snow_ice": "Snow & ice", "water": "Water",
+    "wetland": "Wetland", "mangroves": "Mangroves", "moss_lichen": "Moss & lichen"
+  },
+  "about": {
+    "title": "The method",
+    "lead": "Net primary productivity (NPP) — the carbon plants fix through photosynthesis minus what they respire — is estimated with the CASA light-use-efficiency model, then converted to CO₂.",
+    "formula": "NPP = 0.5 · SOL · FPAR · T1 · T2 · WSC · Eₘₐₓ",
+    "co2": "CO₂ = NPP × 44/12",
+    "terms": [
+      ["SOL", "Monthly incoming solar radiation (MJ/m²) from NASA POWER; half of it is photosynthetically active."],
+      ["FPAR", "Fraction of that light absorbed by the canopy, scaled linearly from Sentinel-2 NDVI (B04, B08) between the CASA references 0.023 and 0.70 (Zhu et al., 2006)."],
+      ["T1, T2", "Temperature stress factors from monthly air temperature and the optimal temperature (warmest month)."],
+      ["WSC", "Water stress from the Shortwave Infrared Moisture Index (Sentinel-2 B11, B12), normalised within the region (Fensholt & Sandholt, 2003), between 0.5 and 1."],
+      ["Eₘₐₓ", "Maximum light-use efficiency for each ESA WorldCover 2021 land-cover class."]
+    ],
+    "origin": "This web app rebuilds the final-year project (PFC) developed at ISEL for the municipality of Oeiras. The thesis reports, posters and the original reference run (June 2024) are kept for comparison.",
+    "limits": "Results are monthly estimates. Climate inputs are coarse (~50 km) so detail comes from vegetation indices and land cover; built-up areas and water absorb nothing in this model."
+  }
+}

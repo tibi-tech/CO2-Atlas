@@ -1,0 +1,18 @@
+﻿{
+    "title":  "How much CO₂ does the vegetation around you absorb? Let\u0027s measure it from space.",
+    "home":  "CO₂ Atlas estimates how much carbon plants absorb every month, for any region up to a thousand square kilometres, using free satellite and climate data. The interface comes in English and Portuguese.",
+    "regions":  "Every region you create is saved, with its calculations and monthly history.",
+    "search":  "Start by finding a place. Search any park, town or farm, and its boundary is loaded from OpenStreetMap. Or draw a polygon or a rectangle, or upload a GeoJSON or a shapefile.",
+    "form":  "Name the region, add the population and emissions you want to compare against, then choose the months to calculate. Advanced settings let you tune the model.",
+    "progress":  "Satellite processing runs in the background, with live progress. Sentinel-2 images are cloud-masked, then combined with land cover and NASA climate data. Sped up here; a real run takes a few minutes.",
+    "results":  "And here are the results: the CO₂ absorbed by vegetation, the share of local emissions it offsets, and the productivity per hectare.",
+    "atlas":  "The interactive atlas shows CO₂, net primary productivity, vegetation index, water stress and land cover. Click any pixel to read its values, or switch to satellite view.",
+    "breakdown":  "Totals by land cover and a month by month chart make it easy to compare areas and seasons.",
+    "exports":  "Export a PDF report, a CSV table, or GeoTIFF layers for your own GIS.",
+    "m1":  "CASA turns satellite and climate data into productivity.",
+    "m2":  "Sunlight from NASA POWER, leaf light absorption from Sentinel-2.",
+    "m3":  "Temperature and water stress, plus land-cover efficiency.",
+    "m4":  "Then converted to CO₂.",
+    "thesis":  "The original thesis results for Oeiras are bundled, and reproduced within one percent.",
+    "end":  "CO₂ Atlas. Open source, built on Sentinel-2, ESA WorldCover and NASA POWER. Find it on GitHub."
+}

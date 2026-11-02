@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    image: co2-absorption-calculator
+    ports:
+      - "8000:8000"
+    env_file: .env
+    volumes:
+      - co2-data:/data
+    restart: unless-stopped
+
+volumes:
+  co2-data:
